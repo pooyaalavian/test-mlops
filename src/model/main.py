@@ -38,7 +38,8 @@ def cleanse_data(df):
                   'pickupLongitude', 'pickupLatitude',
                   'dropoffLongitude', 'dropoffLatitude', 'totalAmount']]
     final_df = taxi_df.query("pickupLatitude>=40.53 and pickupLatitude<=40.88")
-    final_df = final_df.query("pickupLongitude>=-74.09 and pickupLongitude<=-73.72")
+    final_df = final_df.query(
+        "pickupLongitude>=-74.09 and pickupLongitude<=-73.72")
     final_df = final_df.query("tripDistance>=0.25 and tripDistance<31")
     final_df = final_df.query("passengerCount>0 and totalAmount>0")
     columns_to_remove_for_training = ["pickupLongitude",
